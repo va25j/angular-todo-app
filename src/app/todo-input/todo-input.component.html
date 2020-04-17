@@ -1,0 +1,7 @@
+<div class="input__wrapper">
+  <mat-form-field class="example-full-width">
+    <mat-label>Start typing your tasks...</mat-label>
+    <input matInput autocomplete="off" [(ngModel)]="title" (keydown.enter)="addTask()">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="addTask()">Add Task</button>
+</div>
