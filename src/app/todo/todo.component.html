@@ -1,6 +1,6 @@
 <div class="todo__wrapper">
-  <ul *ngIf="todos.length; else emptyTask">
-    <li *ngFor="let t of todos">
+  <ul *ngIf="todoAppService.todo.length; else emptyTask">
+    <li *ngFor="let t of todoAppService.todo">
       <span [class.completed]='t.completed'>
         <mat-checkbox class="example-margin" [checked]='t.completed' (change)="toggleCheck(t.id)"></mat-checkbox>
         {{t.title}}
