@@ -9,12 +9,9 @@ import { Todo } from '../interfaces/todo';
 })
 export class TodoComponent implements OnInit {
 
-  todos: Todo[];
-
   constructor(public todoAppService: TodoAppService) { }
 
   ngOnInit(): void {
-    this.todos = this.todoAppService.todo;
   }
 
   /* Done */
