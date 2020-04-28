@@ -14,13 +14,13 @@ export class TodoAppService {
   /* Toggle */
 
   toggleCheck(id: number) {
-    const i = this.todo.findIndex( t => t.id === id);
+    const i = this.todo.findIndex(t => t.id === id);
     this.todo[i].completed = !this.todo[i].completed;
   }
 
   /* Delete Task */
   deleteTask(id: number) {
-    return this.todo = this.todo.filter( ita => ita.id !== id);
+    return this.todo = this.todo.filter(ita => ita.id !== id);
   }
 
 }
