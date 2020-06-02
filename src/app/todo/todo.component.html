@@ -1,6 +1,6 @@
 <div class="todo__wrapper">
-  <ul *ngIf="todoAppService.todo.length; else emptyTask">
-    <li *ngFor="let t of todoAppService.todo">
+  <ul *ngIf="todos.length; else emptyTask">
+    <li *ngFor="let t of todos">
       <span [class.completed]='t.completed'>
         <mat-checkbox class="example-margin" [checked]='t.completed' (change)="toggleCheck(t.id)"></mat-checkbox>
         {{t.title}}
@@ -9,6 +9,6 @@
     </li>
   </ul>
   <ng-template #emptyTask>
-    <h2>Задач на сегодня нет</h2>
+    <h2>Список задач пуст!</h2>
   </ng-template>
 </div>

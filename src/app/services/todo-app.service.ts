@@ -5,22 +5,22 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TodoAppService {
+  public todo: Todo[];
 
-  constructor() { }
-
-  /* Array TODO */
-  todo: Todo[] = [];
+  constructor() {
+    this.todo = [];
+  }
 
   /* Toggle */
-
-  toggleCheck(id: number) {
+  public toggleCheck(id: number): void {
     const i = this.todo.findIndex(t => t.id === id);
     this.todo[i].completed = !this.todo[i].completed;
   }
 
   /* Delete Task */
-  deleteTask(id: number) {
-    return this.todo = this.todo.filter(ita => ita.id !== id);
+  public deleteTask(id: number): Todo[] {
+    this.todo =  this.todo.filter(ita => ita.id !== id);
+    return this.todo;
   }
 
 }

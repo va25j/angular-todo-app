@@ -8,20 +8,20 @@ import { Todo } from '../interfaces/todo';
   styleUrls: ['./todo.component.sass']
 })
 export class TodoComponent implements OnInit {
+  public todos: Todo[];
 
   constructor(public todoAppService: TodoAppService) { }
 
   ngOnInit(): void {
+    this.todos = this.todoAppService.todo;
   }
 
-  /* Done */
-  toggleCheck(id: number) {
+  public toggleCheck(id: number): void {
     this.todoAppService.toggleCheck(id);
   }
 
-  /* Delete Task */
-  deleteTask(id: number) {
-    this.todoAppService.deleteTask(id);
+  public deleteTask(id: number): void {
+    this.todos = this.todoAppService.deleteTask(id);
   }
 
 }
